@@ -5,7 +5,7 @@ console.log("app.js is running");
 var app = {
   title: "Indecision app",
   subtitle: "Put your life in the hands of a computer",
-  options: ["one", "two"]
+  options: []
 };
 
 var onFromSubmit = function onFromSubmit(e) {
@@ -21,6 +21,12 @@ var onFromSubmit = function onFromSubmit(e) {
 var onRemoveAll = function onRemoveAll() {
   app.options = [];
   render();
+};
+
+var onMakeDecision = function onMakeDecision() {
+  var randomNum = Math.floor(Math.random() * app.options.length);
+  var option = app.options[randomNum];
+  console.log(option);
 };
 
 var render = function render() {
@@ -41,6 +47,14 @@ var render = function render() {
       "p",
       null,
       app.options.length > 0 ? "Here are your options" : "no"
+    ),
+    React.createElement(
+      "button",
+      {
+        disabled: app.options.length == 0 ? true : false,
+        onClick: onMakeDecision
+      },
+      "What should i do?"
     ),
     React.createElement(
       "button",
