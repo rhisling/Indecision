@@ -42,4 +42,41 @@ var template = React.createElement(
   )
 );
 
-ReactDOM.render(template, document.getElementById("app"));
+var count = 0;
+var addOne = function addOne() {
+  console.log("addNone");
+};
+var minusOne = function minusOne() {
+  console.log("minusOne");
+};
+
+var reset = function reset() {
+  console.log("reset");
+};
+var templateTwo = React.createElement(
+  "div",
+  null,
+  React.createElement(
+    "h1",
+    null,
+    "count: ",
+    count
+  ),
+  React.createElement(
+    "button",
+    { onClick: addOne },
+    "+1"
+  ),
+  React.createElement(
+    "button",
+    { onClick: minusOne },
+    "-1"
+  ),
+  React.createElement(
+    "button",
+    { onClick: reset },
+    "reset"
+  )
+);
+
+ReactDOM.render(templateTwo, document.getElementById("app"));

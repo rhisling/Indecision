@@ -1,12 +1,12 @@
 console.log("app.js is running");
 
-var app = {
+const app = {
   title: "Indecision app",
   subtitle: "Put your life in the hands of a computer",
   options: ["one", "two"]
 };
 
-var template = (
+const template = (
   <div>
     <h1>{app.title}</h1>
     {app.subtitle && <p>{app.subtitle}</p>}
@@ -18,4 +18,24 @@ var template = (
   </div>
 );
 
-ReactDOM.render(template, document.getElementById("app"));
+let count = 0;
+const addOne = () => {
+  console.log("addNone");
+};
+const minusOne = () => {
+  console.log("minusOne");
+};
+
+const reset = () => {
+  console.log("reset");
+};
+const templateTwo = (
+  <div>
+    <h1>count: {count}</h1>
+    <button onClick={addOne}>+1</button>
+    <button onClick={minusOne}>-1</button>
+    <button onClick={reset}>reset</button>
+  </div>
+);
+
+ReactDOM.render(templateTwo, document.getElementById("app"));
