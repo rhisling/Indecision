@@ -128,7 +128,11 @@ var Option = function (_React$Component5) {
   _createClass(Option, [{
     key: "render",
     value: function render() {
-      return React.createElement("div", { Option: true, Component: true, here: true });
+      return React.createElement(
+        "div",
+        null,
+        " Option component here "
+      );
     }
   }]);
 
