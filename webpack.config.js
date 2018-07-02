@@ -15,5 +15,9 @@ module.exports = {
             }
         ]
     },
-    mode: 'development'
+    mode: 'development',
+    devtool: 'cheap-module-eval-source-map',
+    devServer: {
+        contentBase: path.join(__dirname, 'public')
+    }
 };
