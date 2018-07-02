@@ -31,7 +31,7 @@ var IndecisionApp = function (_React$Component) {
     key: 'handleDeleteOptions',
     value: function handleDeleteOptions() {
       this.setState(function () {
-        return { options: [] };
+        options: [];
       });
     }
   }, {

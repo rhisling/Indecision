@@ -17,7 +17,7 @@ class IndecisionApp extends React.Component {
 
   handleDeleteOptions() {
     this.setState(() => {
-      return {options: []}
+      options : []
     });
   }
 
@@ -33,14 +33,12 @@ class IndecisionApp extends React.Component {
     } else if (this.state.options.indexOf(option) > -1) {
       return 'This option already exists';
     }
-    this.setState((prevState) => {
-      return {
-        options: [
-          ...prevState.options,
-          option
-        ]
-      }
-    });
+    this.setState((prevState) => ({
+      options: [
+        ...prevState.options,
+        option
+      ]
+    }));
   }
 
   render() {
@@ -130,9 +128,7 @@ class AddOption extends React.Component {
       .props
       .handleAddOption(option);
     console.log(error);
-    this.setState(() => {
-      return {error}
-    });
+    this.setState(() => ({error}));
 
   }
 
